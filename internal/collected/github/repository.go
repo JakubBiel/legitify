@@ -24,7 +24,7 @@ type GitHubQLRepositoryCollaboratorsEdge struct {
 }
 
 type GitHubQLRepositoryCollaborators struct {
-	Edges []GitHubQLRepositoryCollaboratorsEdge `json:"edges" graphql:"edges"`
+	Edges []GitHubQLRepositoryCollaboratorsEdge `json:"edges"`
 }
 
 type GitHubQLRepository struct {
@@ -38,6 +38,7 @@ type GitHubQLRepository struct {
 	DefaultBranchRef   *GitHubQLBranch    `json:"default_branch"`
 	PushedAt           *githubv4.DateTime `json:"pushed_at"`
 	ViewerPermission   string             `json:"viewerPermission"`
+	Collaborators 	   *GitHubQLRepositoryCollaborators  `json:"collaborators"`
 }
 
 type GitHubQLBranchProtectionRule struct {
