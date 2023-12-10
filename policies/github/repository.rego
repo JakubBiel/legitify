@@ -16,7 +16,7 @@ import data.common.webhooks as webhookUtils
 default repository_has_too_many_admins := true
 
 repository_has_too_many_admins := false {
-	admins := [admin | admin := input.repository.collaborators.edges[_]; admin.permission == "ADMIN"]
+	admins := [admin | admin := input.collaborators[_]; admin.permissions.admin]
 	count(admins) <= 14
 }
 
